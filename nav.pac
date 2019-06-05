@@ -4,7 +4,9 @@ function FindProxyForURL(url, host)
       shExpMatch(host, "repo.adeo.no") ||
       shExpMatch(host, "vault.adeo.no") ||
       shExpMatch(host, "apiserver.*.nais.io") ||
-      shExpMatch(host, "vera-ver.adeo.no")
+      shExpMatch(host, "vera-ver.adeo.no") ||
+      shExpMatch(host, "jenkins*.adeo.no") ||
+      shExpMatch(host, "*jenkins.adeo.no")
   ){
     return "SOCKS localhost:14122;SOCKS localhost:5000";
   } else if (shExpMatch(host, "aura.adeo.no")) {
