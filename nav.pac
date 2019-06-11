@@ -4,7 +4,7 @@ function FindProxyForURL(url, host)
       shExpMatch(host, "repo.adeo.no") ||
       shExpMatch(host, "vault.adeo.no") ||
       shExpMatch(host, "apiserver.*.nais.io") ||
-      shExpMatch(host, "vera-ver.adeo.no") ||
+      shExpMatch(host, "vera.adeo.no") ||
       shExpMatch(host, "jenkins*.adeo.no") ||
       shExpMatch(host, "*jenkins.adeo.no")
   ){
