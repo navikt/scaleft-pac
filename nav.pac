@@ -8,9 +8,9 @@ function FindProxyForURL(url, host)
       shExpMatch(host, "jenkins*.adeo.no") ||
       shExpMatch(host, "*jenkins.adeo.no")
   ){
-    return "SOCKS localhost:14122;SOCKS localhost:5000";
-  } else if (shExpMatch(host, "aura.adeo.no")) {
-    return "SOCKS localhost:5000";
+    return "SOCKS localhost:14122";
+  } else if (shExpMatch(host, "*.dev-gcp.nais.io")) {
+    return "SOCKS localhost:14130";
   }
 
   return "DIRECT";
