@@ -6,11 +6,14 @@ function FindProxyForURL(url, host)
       shExpMatch(host, "apiserver.*.nais.io") ||
       shExpMatch(host, "vera.adeo.no") ||
       shExpMatch(host, "jenkins*.adeo.no") ||
-      shExpMatch(host, "*jenkins.adeo.no")
-  ){
+      shExpMatch(host, "*jenkins.adeo.no")) {
     return "SOCKS localhost:14122";
-  } else if (shExpMatch(host, "*.dev-gcp.nais.io")) {
-    return "SOCKS localhost:14130";
+  } else if (shExpMatch(host, "*.dev-gcp.nais.io") ||
+             shExpMatch(host, "*.dev-nav.no") || 
+             shExpMatch(host, "*.dev-adeo.no")) {
+    return "SOCKS localhost:14134";
+  } else if (shExpMatch(host, "*.prod-gcp.nais.io")) {
+    return "SOCKS localhost:14135";
   }
 
   return "DIRECT";
