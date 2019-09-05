@@ -12,7 +12,8 @@ function FindProxyForURL(url, host)
              shExpMatch(host, "*.dev-nav.no") || 
              shExpMatch(host, "*.dev-adeo.no")) {
     return "SOCKS localhost:14134";
-  } else if (shExpMatch(host, "*.prod-gcp.nais.io")) {
+  } else if (shExpMatch(host, "*.prod-gcp.nais.io") ||
+             shExpMatch(host, "basta-frontend.adeo.no")) {
     return "SOCKS localhost:14135";
   }
 
