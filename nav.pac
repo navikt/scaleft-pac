@@ -3,6 +3,7 @@ function FindProxyForURL(url, host)
   if (shExpMatch(host, "stash.adeo.no") ||
       shExpMatch(host, "repo.adeo.no") ||
       shExpMatch(host, "vault.adeo.no") ||
+      shExpMatch(host, "vault-dev.adeo.no") ||
       shExpMatch(host, "apiserver.*.nais.io") ||
       shExpMatch(host, "vera.adeo.no") ||
       shExpMatch(host, "jenkins*.adeo.no") ||
