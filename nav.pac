@@ -19,7 +19,7 @@ function FindProxyForURL(url, host)
   } else if (shExpMatch(host, "sentry.navtunnel") ||
       shExpMatch(host, "sentry-proxy.navtunnel")) {
     return "SOCKS localhost:14136";
-  } else if (shExpMatch(url, "https:\/\/isso-q.adeo.no:443/isso") ||
+  } else if (shExpMatch(url, 'https://isso-q.adeo.no:443/isso') ||
       shExpMatch(url, 'https://isso-q.adeo.no:443/isso/oauth2/connect/jwk_uri') ||
       shExpMatch(url, 'https://isso-q.adeo.no:443/isso/oauth2') ||
       shExpMatch(url, 'https://security-token-service.nais.preprod.local/rest/v1/sts/token') ||
