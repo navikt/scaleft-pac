@@ -20,13 +20,12 @@ function FindProxyForURL(url, host)
       shExpMatch(host, "sentry-proxy.navtunnel")) {
     return "SOCKS localhost:14136";
   } else if (shExpMatch(host, "isso-q.adeo.no") ||
-      shExpMatch(url, 'https://isso-q.adeo.no:443/isso/*') ||
       shExpMatch(url, 'https://security-token-service.nais.preprod.local/*') ||
       shExpMatch(url, 'https://sts-q2.preprod.local/*') ||
       shExpMatch(url, 'https://wasapp-q2.adeo.no/tpsws/*') ||
       shExpMatch(url, 'https://wasapp-q2.adeo.no/nav-gsak-ws/*') ||
       shExpMatch(url, 'https://tjenestebuss-q2.adeo.no/*') ||
-      shExpMatch(url, 'https://app-q2.adeo.no/norg2/*') ||
+      shExpMatch(url, 'https://app-q2.adeo.no/norg2/**') ||
       shExpMatch(url, 'https://app-q2.adeo.no/medl2/*') ||
       shExpMatch(url, 'https://arena-q2.adeo.no/ail_ws/*') ||
       shExpMatch(url, 'https://app-q2.adeo.no/aktoerregister/*') ||
