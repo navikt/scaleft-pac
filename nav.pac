@@ -18,9 +18,8 @@ function FindProxyForURL(url, host)
              shExpMatch(host, "basta.adeo.no") ||
              shExpMatch(host, "basta-frontend.adeo.no")) {
     return "SOCKS localhost:14135";
-  } else if (shExpMatch(host, "sentry.navtunnel") ||
-             shExpMatch(host, "sentry-proxy.navtunnel")) {
-    return "SOCKS localhost:14136";
+  } else if (shExpMatch(host, "kubeflow.adeo.no") {
+    return "SOCKS localhost:14139";
   }
 
   return "DIRECT";
