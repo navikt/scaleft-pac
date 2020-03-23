@@ -7,6 +7,7 @@ function FindProxyForURL(url, host)
       shExpMatch(host, "apiserver.*.nais.io") ||
       shExpMatch(host, "vera.adeo.no") ||
       shExpMatch(host, "jenkins*.adeo.no") ||
+      shExpMatch(host, "unleash.nais.adeo.no") ||
       shExpMatch(host, "*jenkins.adeo.no")) {
     return "SOCKS localhost:14122";
   } else if (shExpMatch(host, "*.dev-gcp.nais.io") ||
