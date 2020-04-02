@@ -1,4 +1,3 @@
-
 name: build and push
 on:
   push:
@@ -15,7 +14,7 @@ jobs:
       run: |
         curl -O https://storage.googleapis.com/pub/gsutil.tar.gz
         tar xfz gsutil.tar.gz
-        echo ${{ secrets.NAVPAC_JSON_KEY_BASE64 }} | base64 --decode > sa.json
+        echo -n ${{ secrets.NAVPAC_JSON_KEY_BASE64 }} | base64 --decode > sa.json
         chmod 600 sa.json
         export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/sa.json"
         cat > ~/.boto <<EOF
