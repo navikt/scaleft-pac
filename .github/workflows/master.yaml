@@ -9,6 +9,7 @@ on:
 jobs:
   upload-pac-to-bucket:
     name: upload nav.pac to bucket
+    runs-on: ubuntu-latest
     steps:
     - name: download gsutil and upload nav.pac
       run: |
