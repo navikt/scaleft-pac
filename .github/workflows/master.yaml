@@ -14,15 +14,10 @@ jobs:
     - name: download gsutil and upload nav.pac
       run: |
         curl -O https://storage.googleapis.com/pub/gsutil.tar.gz
-        echo 1
         tar xfz gsutil.tar.gz
-        echo 2
         echo ${{ secrets.NAVPAC_JSON_KEY_BASE64 }} | base64 --decode > sa.json
-        echo 3
         chmod 600 sa.json
-        echo 4
         export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/sa.json"
-        echo 5
         cat > ~/.boto <<EOF
         [Credentials]
         gs_service_key_file = $(pwd)/sa.json
