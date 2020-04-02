@@ -1,0 +1,35 @@
+
+name: build and push
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'nav.pac'
+jobs:
+  upload-pac-to-bucket:
+    name: upload nav.pac to bucket
+    steps:
+    - name: download gsutil and upload nav.pac
+      run: |
+        curl -O https://storage.googleapis.com/pub/gsutil.tar.gz
+        tar xfz gsutil.tar.gz
+        echo ${{ secrets.NAVPAC_JSON_KEY_BASE64 }} | base64 --decode > sa.json
+        chmod 600 sa.json
+        export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/sa.json"
+        cat > ~/.boto <<EOF
+        [Credentials]
+        gs_service_key_file = $(pwd)/sa.json
+
+        [Boto]
+        https_validate_certificates = True
+
+        [GSUtil]
+        default_project_id = nav-pac
+        content_language = en
+        default_api_version = 2
+        EOF
+
+        ./gsutil/gsutil cp ./nav.pac gs://nav-pac/nav.pac
+        rm sa.json
+        echo yay
