@@ -6,6 +6,8 @@ function FindProxyForURL(url, host)
       shExpMatch(host, "vault-dev.adeo.no") ||
       shExpMatch(host, "apiserver.*.nais.io") ||
       shExpMatch(host, "vera.adeo.no") ||
+      shExpMatch(host, "*.dev-fss.nais.io") ||
+      shExpMatch(host, "*.dev-sbs.nais.io") ||
       shExpMatch(host, "jenkins*.adeo.no") ||
       shExpMatch(host, "*jenkins.adeo.no")) {
     return "SOCKS localhost:14122";
